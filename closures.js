@@ -51,7 +51,7 @@ function callFriend(name) {
 
 //Code Here
 let callJake = callFriend("Jake");
-callJake.dial("435-555-9248");
+callJake("435-555-9248");
 
 ////////// PROBLEM 3 //////////
 
@@ -88,23 +88,49 @@ count(); // 4
 */
 
 function counterFactory(value) {
-  let startValue = value;
+  let startValue = value
   return {
-    inc: () => {
-      startValue++;
+    inc: function(){
+      startValue ++
       return startValue;
     },
-    dec: () => {
-      startValue--;
-      return startValue;
+    dec: function(){
+      startValue --
+      return startValue
     }
-  };
+  }
 }
-let counter = counterFactory(10);
+
+counter = counterFactory(10);
 counter.inc(); // 11
 counter.inc(); // 12
 counter.inc(); // 13
 counter.dec(); // 12
+
+// function counterFactory(value) {
+//   let startVal = value
+//   return {
+//     inc: function(){
+//       startVal++
+//       return startVal
+//     },
+//     dec: function() {
+//       startVal--
+//       return startVal
+//     }
+//   };
+// }
+// counter = counterFactory(10);
+// counter.inc() // 11
+// counter.inc() // 12
+// counter.inc() // 13
+// counter.dec() // 12
+
+
+
+
+
+
 
 ////////// PROBLEM 5 //////////
 
@@ -126,7 +152,7 @@ function motivation(firstname, lastname) {
   return message;
 }
 
-var greeting = motivation("Billy", "Bob"); // 'You're doing awesome keep it up Billy Bob.
+let greeting = motivation("Billy", "Bob"); // 'You're doing awesome keep it up Billy Bob.
 
 ////////// PROBLEM 6 //////////
 
@@ -208,6 +234,7 @@ function secretNumber() {
 
 function timeOutCounter() {
   for (let i = 0; i <= 5; i++) {
+    //n is allowing the timeout function to stop as it iterates 
     let n = i;
     setTimeout(function() {
       console.log(n);
